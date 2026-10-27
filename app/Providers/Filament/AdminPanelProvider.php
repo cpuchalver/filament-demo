@@ -35,9 +35,6 @@ class AdminPanelProvider extends PanelProvider
             ->darkModeBrandLogo(url('images/logo/primary.svg'))
             ->navigationGroups([
                 'Shop',
-                'HR',
-                'Projects',
-                'Blog',
             ])
             ->databaseNotifications()
             ->globalSearchKeyBindings(['command+k', 'ctrl+k'])
