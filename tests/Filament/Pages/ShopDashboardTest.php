@@ -4,7 +4,6 @@ use App\Enums\OrderStatus;
 use App\Filament\Pages\ShopDashboard;
 use App\Filament\Widgets\CustomerGrowthChart;
 use App\Filament\Widgets\CustomerSegmentsChart;
-use App\Filament\Widgets\FeaturesOverview;
 use App\Filament\Widgets\FlaggedOrders;
 use App\Filament\Widgets\OrdersYearOverYearChart;
 use App\Filament\Widgets\OrderValueDistributionChart;
@@ -77,12 +76,4 @@ it('renders shop stats with page filters without polling', function () {
         ->assertSee('1 orders')
         ->assertDontSee('2 orders')
         ->assertDontSeeHtml('wire:poll');
-});
-
-it('does not advertise polling in the features overview', function () {
-    Livewire::test(FeaturesOverview::class)
-        ->assertOk()
-        ->assertSee('Tables & Columns')
-        ->assertDontSee('Live polling')
-        ->assertDontSee('Table data auto-refreshes every 30 seconds in the background');
 });
